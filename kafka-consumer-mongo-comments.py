@@ -57,7 +57,7 @@ except:
     print("Could not connect to MongoDB Aquiii")
 
 consumer = KafkaConsumer('comment',bootstrap_servers=['my-kafka-0.my-kafka-headless.btoarriola.svc.cluster.local:9092'])
-# Parse received data from Kafka
+# Parse received data from Kafka ss
 for msg in consumer:
     record = json.loads(msg.value)
     print(record)
