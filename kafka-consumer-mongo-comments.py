@@ -30,7 +30,7 @@ try:
     client.admin.command('ping')
     print("Pinged your deployment. You successfully connected to MongoDB!")
 
-    db = client.tkdapp
+    db = client.memes
     print("MongoDB Connected successfully todo bien hasta aqui!")
 except:
     print("Could not connect to MongoDB Aquiii")
@@ -53,7 +53,6 @@ for msg in consumer:
         meme_id = db.meme_comments.insert_one(meme_rec)
         print("Data inserted with record ids", meme_id)
 
-        subprocess.call(['sh', './test.sh'])
     except Exception as e:
         print("Could not insert into MongoDB")
         print(e)
