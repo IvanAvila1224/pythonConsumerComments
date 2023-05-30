@@ -42,27 +42,6 @@ for msg in consumer:
     print(record)
     userid = record['userid']
     objectid = record['objectid']
-    reactionid = record['reactionid']
-    print("hola :)")
-
-
-   try:
-    client = MongoClient(uri)
-    client.admin.command('ping')
-    print("Pinged your deployment. You successfully connected to MongoDB!")
-
-    db = client.tkdapp
-    print("MongoDB Connected successfully todo bien hasta aqui!")
-except:
-    print("Could not connect to MongoDB Aquiii")
-
-consumer = KafkaConsumer('comment',bootstrap_servers=['my-kafka-0.my-kafka-headless.btoarriola.svc.cluster.local:9092'])
-# Parse received data from Kafka ss
-for msg in consumer:
-    record = json.loads(msg.value)
-    print(record)
-    userid = record['userid']
-    objectid = record['objectid']
     message = record['message']
     print("hola :)")
 
