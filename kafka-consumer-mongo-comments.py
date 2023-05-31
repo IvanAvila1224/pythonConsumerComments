@@ -58,6 +58,7 @@ for msg in consumer:
         print(e)
 
     # Create bdnosql_sumary and insert groups into mongodb
+    
     try:
         agg_result = db.meme_comments.aggregate([
         {
