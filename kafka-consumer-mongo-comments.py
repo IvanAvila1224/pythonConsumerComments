@@ -9,7 +9,7 @@ import subprocess
 
 
 
-# replace here with your mongodb url 
+
 uri = "mongodb+srv://ivanavila:admin@cluster0.hdko7y8.mongodb.net/?retryWrites=true&w=majority"
 
 
@@ -35,7 +35,7 @@ try:
 except:
     print("Could not connect to MongoDB Aquiii")
 
-consumer = KafkaConsumer('reaction',bootstrap_servers=['my-kafka-0.my-kafka-headless.v2-ivanavila1224.svc.cluster.local:9092'])
+consumer = KafkaConsumer('comment',bootstrap_servers=['my-kafka-0.my-kafka-headless.v2-ivanavila1224.svc.cluster.local:9092'])
 # Parse received data from Kafka
 for msg in consumer:
     record = json.loads(msg.value)
